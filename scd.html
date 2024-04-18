@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="new.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="" id="overlay" style="display: none;"><h3>Searching now...</h3></div>
+    <div class="hero-bg2" id="first">
+        <section class="top">
+            <header>
+                <p>HotSpot</p>
+            </header>
+
+            <h1 style="font-size: 60px;">Paris</h1>
+
+            <p></p>
+
+            <div class="form-container">
+                <p>Paris is the City of Light, of love, of beauty, of romance and of hope over fear, gratitude over cynicism and light over darkness</p>
+            </div>
+        </section>
+    </div>
+    <section class="authentic" style="padding: 20px 0px;">
+        <div class="right-col">
+            <h2 style="font-size: 50px;">Restaurants</h2>
+            <p>Top five Restaurants that are trending in Paris!</p>
+            <div class="form-container">
+                <form action="">
+                    <div class="form-left">
+                        <label for="city" style="font-size:30px">Restaurants</label>
+                    </div>
+                    <input type="button" value="See now" id="cta-btn" onclick="location.href='trd.html'">
+                </form>
+            </div>
+        </div>
+        <img src="images/pink-mamma.jpg">
+    </section>
+    <section class="authentic" style="padding: 20px 0px;">
+        <div class="right-col">
+            <h2 style="font-size: 50px;">Nightlife</h2>
+            <p>Top five Clubs and Bars that are trending in Paris!</p>
+            <div class="form-container">
+                <form action="">
+                    <div class="form-left">
+                        <label for="city" style="font-size:30px">Nightlife</label>
+                    </div>
+                    <input type="button" value="See now" id="cta-btn" onclick="location.href='trd.html'">
+                </form>
+            </div>
+        </div>
+        <img src="images/club.jpg">
+    </section>
+    <section class="authentic" style="padding: 20px 0px;">
+        <div class="right-col">
+            <h2 style="font-size: 50px;">Activities</h2>
+            <p>Top five Activties that are trending in Paris! Activities could include museums, arcades, events, expos and more!</p>
+            <div class="form-container">
+                <form action="">
+                    <div class="form-left">
+                        <label for="city" style="font-size:30px">Activities</label>
+                    </div>
+                    <input type="button" value="See now" id="cta-btn" onclick="location.href='trd.html'">
+                </form>
+            </div>
+        </div>
+        <img src="images/arcade.jpg">
+    </section>
+    <script>
+        function convert(item){
+            const parser = new DOMParser()
+            const doc3 = parser.parseFromString(item, "text/html")
+
+            return doc3.body.firstChild
+        }
+        let btn = document.getElementById('cta-btn');
+        
+
+        btn.addEventListener('click', () => {
+            let overlay = document.getElementById('overlay');
+            overlay.setAttribute("class", "overlay")
+            overlay.style.display = 'grid';
+            overlay.classList.add('animate-overlay')
+        })
+
+        const ex = document.getElementById("overlay")
+        ex.addEventListener("animationend", () => {
+            ex.style.display = "none";
+        })
+    </script>
+</body>
+</html>

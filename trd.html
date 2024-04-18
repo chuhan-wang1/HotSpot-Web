@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="new.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="" id="overlay" style="display: none;"><h3>Searching now...</h3></div>
+    <div class="hero-bg2" id="first">
+        <section class="top">
+            <header>
+                <a>HotSpot</a>
+            </header>
+
+            <h1 style="font-size: 75px; margin: 0.5em 0 1.2em;">Restaurants</h1>
+            <p style="font-size: 30px; font-style: italic; padding: 0px 0px 30px;">Top 5 trending restaurants in Paris right now !</p>
+     <section class="authentic">
+        <div class="right-col">
+            <div class="form-container" style="margin-bottom: 50px;">
+                <form action="">
+                    <div class="form-left">
+                        <h3 style="font-size:30px; text-align: left; padding: 10px; color: black;">Ralph's</h2>
+                            <ul>
+                                <li>
+                                    Price: ✩✩✩✩
+                                </li>
+                                <li>
+                                   How easy it is to eat vegetarian: ✩✩
+                                </li>
+                                <li>
+                                   Location: 75006 Paris (6th arrondissement)
+                                </li> 
+                            </ul>
+                    </div>
+                    <input type="button" value="See now" style="color: black;">
+                </form>
+            </div>
+        </div>
+        <img src="images/ralph.jpg" style="outline: 5px groove black;">
+    </section>
+    <section class="authentic" style="padding: 30px;">
+        <div class="right-col">
+            <div class="form-container">
+                <form action="">
+                    <div class="form-left">
+                        <h3 style="font-size:30px; text-align: left; padding: 10px; color: black;">Pink Mamma</h2>
+                            <ul>
+                                <li>
+                                    Price: ✩✩✩
+                                </li>
+                                <li>
+                                   How easy it is to eat vegetarian: ✩✩✩✩✩ 
+                                </li>
+                                <li>
+                                   Location: 75009 Paris (9th arrondissement)
+                                </li> 
+                            </ul>
+                    </div>
+                    <input type="button" value="See now" style="color: black;">
+                </form>
+            </div>
+        </div>
+        <img src="images/mamma.jpg" style="outline: 5px groove black;">
+    </section>
+    <section class="authentic" style="padding: 30px;">
+        <div class="right-col">
+            <div class="form-container">
+                <form action="">
+                    <div class="form-left">
+                        <h3 style="font-size:30px; text-align: left; padding: 10px; color: black;">Le Train Bleu</h2>
+                            <ul>
+                                <li>
+                                    Price: ✩✩✩✩
+                                </li>
+                                <li>
+                                   How easy it is to eat vegetarian: ✩✩ 
+                                </li>
+                                <li>
+                                   Location: 75012 Paris (12th arrondissement)
+                                </li> 
+                            </ul>                        
+                    </div>
+                    <input type="button" value="See now" style="color: black;">
+                </form>
+            </div>
+        </div>
+        <img src="images/Train.jpg" style="outline: 5px groove black;">
+    </section>
+    <section class="authentic" style="padding: 30px;">
+        <div class="right-col">
+            <div class="form-container">
+                <form action="">
+                    <div class="form-left">
+                        <h3 style="font-size:30px; text-align: left; padding: 10px; color: black;">Derriere</h2>
+                            <ul>
+                                <li>
+                                    Price: ✩✩✩
+                                </li>
+                                <li>
+                                   How easy it is to eat vegetarian: ✩ 
+                                </li>
+                                <li>
+                                   Location: 75003 Paris (3th arrondissement)
+                                </li> 
+                            </ul>
+                    </div>
+                    <input type="button" value="See now" style="color: black;">
+                </form>
+            </div>
+        </div>
+        <img src="images/derriere.jpg" style="outline: 5px groove black;">
+    </section>
+    <section class="authentic" style="padding: 30px;">
+        <div class="right-col">
+            <div class="form-container">
+                <form action="">
+                    <div class="form-left">
+                        <h3 style="font-size:30px; text-align: left; padding: 10px; color: black;">Le Plein Soleil</h2>
+                            <ul>
+                                <li>
+                                    Price: ✩✩
+                                </li>
+                                <li>
+                                   How easy it is to eat vegetarian: ✩✩ 
+                                </li>
+                                <li>
+                                   Location: 75011 Paris (11th arrondissement)
+                                </li> 
+                            </ul>                       
+                    </div>
+                    <input type="button" value="See now" style="color: black;">
+                </form>
+            </div>
+        </div>
+        <img src="images/leplein.jpg" style="outline: 5px groove black;">
+    </section>
+    <script>
+        function convert(item){
+            const parser = new DOMParser()
+            const doc3 = parser.parseFromString(item, "text/html")
+
+            return doc3.body.firstChild
+        }
+        let btn = document.getElementById('cta-btn');
+        
+
+        btn.addEventListener('click', () => {
+            let overlay = document.getElementById('overlay');
+            overlay.setAttribute("class", "overlay")
+            overlay.style.display = 'grid';
+            overlay.classList.add('animate-overlay')
+        })
+
+        const ex = document.getElementById("overlay")
+        ex.addEventListener("animationend", () => {
+            ex.style.display = "none";
+        })
+    </script>
+
+</body>
+</html>

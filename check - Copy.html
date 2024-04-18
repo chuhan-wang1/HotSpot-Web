@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="new.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="" id="overlay" style="display: none;"><h3>Searching now...</h3></div>
+    <div class="hero-bg" id="first">
+        <section class="top">
+            <header>
+                <a>HotSpot</a>
+            </header>
+
+            <h1><span>Find your</span>HotSpot🔥</h1>
+
+           
+
+            <div class="form-container">
+                <form action="">
+                    <div class="form-left">
+                        <label for="city">Enter your city:</label>
+                        <input type="text" name="city" id="city">
+                        <p>Example: "San Diego"</p>
+                    </div>
+                    <input type="button" value="Trending Now" id="cta-btn" onclick="location.href='scd.html'">
+                </form>
+            </div>
+        </section>
+    </div>
+    <section class="authentic">
+        <div class="right-col">
+            <h2>Find the Hottest Spots in your City!</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, maiores reprehenderit explicabo ab ad illo eveniet enim velit, exercitationem et recusandae placeat? Maiores laboriosam libero dolore consectetur! Omnis, recusandae expedita!</p>
+        </div>
+        <img src="images/cities.jpg">
+    </section>
+    <script>
+        function convert(item){
+            const parser = new DOMParser()
+            const doc3 = parser.parseFromString(item, "text/html")
+
+            return doc3.body.firstChild
+        }
+        let btn = document.getElementById('cta-btn');
+        
+
+        btn.addEventListener('click', () => {
+            let overlay = document.getElementById('overlay');
+            overlay.setAttribute("class", "overlay")
+            overlay.style.display = 'grid';
+            overlay.classList.add('animate-overlay')
+        })
+
+        const ex = document.getElementById("overlay")
+        ex.addEventListener("animationend", () => {
+            ex.style.display = "none";
+        })
+    </script>
+</body>
+</html>
